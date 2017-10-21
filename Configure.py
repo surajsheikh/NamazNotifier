@@ -17,7 +17,6 @@ def locationTracer():
 
         :return tuple: returns latitude, longitude, timezone
     """
-    import os
     #Cleaning the OS screen
     os.system('clear')
 
@@ -193,24 +192,23 @@ def displayTimings(url):
 
 
 
+def flowControl():
+    runningAsSudoCheck()
+    lat_lon_tz = locationTracer()
+    latitude = lat_lon_tz[0]
+    longitude = lat_lon_tz[1]
+    timezone = lat_lon_tz[2]
+    currentTimestamp = getCurrentTimestamp(timezone)
+    #Forming url to retrieve the timings based on location and timestamp
+    method = displayCalculationMethod()
+    school = displaySchool()
+    angle = displayLatitudeAdjustmentMethod()
+    url = 'http://api.aladhan.com/timings/'+str(currentTimestamp)+'?latitude='+str(latitude)+'&longitude='+str(longitude)+'&timezonestring='+str(timezone)+'&method='+str(method)+'&school='+str(school)+'&angle='+str(angle)
 
-runningAsSudoCheck()
-lat_lon_tz = locationTracer()
-latitude = lat_lon_tz[0]
-longitude = lat_lon_tz[1]
-timezone = lat_lon_tz[2]
-currentTimestamp = getCurrentTimestamp(timezone)
-#Forming url to retrieve the timings based on location and timestamp
-method = displayCalculationMethod()
-school = displaySchool()
-angle = displayLatitudeAdjustmentMethod()
-url = 'http://api.aladhan.com/timings/'+str(currentTimestamp)+'?latitude='+str(latitude)+'&longitude='+str(longitude)+'&timezonestring='+str(timezone)+'&method='+str(method)+'&school='+str(school)+'&angle='+str(angle)
+    if writeToFile('namaznotifier.lnk', url):
+        cprint('\nConfiguration Successful, You will be notified from the next Namaz time','green',attrs=['bold'])
+        displayTimings(url)
+    else:
+        cprint('\nConfiguration failed, Please try again','red',attrs=['bold'])
 
-if writeToFile('namaznotifier.lnk', url):
-    cprint('\nConfiguration Successful, You will be notified from the next Namaz time','green',attrs=['bold'])
-    displayTimings(url)
-else:
-    cprint('\nConfiguration failed, Please try again','red',attrs=['bold'])
-
-
-
+flowControl()
