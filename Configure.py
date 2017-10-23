@@ -2,10 +2,8 @@ import requests
 import sys
 import os
 from termcolor import colored, cprint
-filename='namaznotifier.lnk'
+filename='namaznotifier.dict'
 filepath='/etc/namaznotifer/'
-if __name__ == '__main__':
-    print('Called')
 
 def responseValidation(requests, url):
     """Validates the response of the url
@@ -23,6 +21,8 @@ def locationTracer():
         :return tuple: returns latitude, longitude, timezone
     """
     #Cleaning the OS screen
+    icon = 'wget  -O '+filepath+'namaz.png '+ '''"https://lh3.googleusercontent.com/ZwQJRezSV5f9qr1P2CTR_uQx4Y1AlvHEMtgU_sFwuHf8Ht1lCBM91ryHOjUegApyEvLp=w300" > /dev/null'''
+    os.system(icon)
     os.system('clear')
 
     # Below url returns the location of the user based on the ip address
@@ -185,7 +185,6 @@ def readFromFile(filepath,filename):
             if len(line) == 0:
                 break
             return line
-        return True
     except Exception as ex:
         cprint('Operation Encountered an error '+ex.strerror,'red')
         return False
@@ -215,29 +214,73 @@ def displayTimings(url):
     cprint('''            Midnight:   '''+responseDict['Midnight'],'cyan')
     print('\n')
 
+def fileExistenceCheck(filepath,filename):
+    from pathlib import Path
+    tempfile = Path(filepath+filename)
+    if tempfile.is_file():
+        return True
+    else:
+        return False
 
 
-def flowControl():
+def urlMakerFromFile(text):
+    import json
+    fileDict = json.loads(text)
+    latitude = fileDict['latitude']
+    longitude = fileDict['longitude']
+    timezone = fileDict['timezone']
+    method = fileDict['method']
+    school = fileDict['school']
+    angle = fileDict['angle']
+    currentTimestamp = getCurrentTimestamp(timezone)
+    url = 'http://api.aladhan.com/timings/'+str(currentTimestamp)+'?latitude='+str(latitude)+'&longitude='+str(longitude)+'&timezonestring='+str(timezone)+'&method='+str(method)+'&school='+str(school)+'&angle='+str(angle)
+    return url
+
+
+def initialSetup():
     runningAsSudoCheck()
     lat_lon_tz = locationTracer()
-    latitude = lat_lon_tz[0]
-    longitude = lat_lon_tz[1]
-    timezone = lat_lon_tz[2]
-    currentTimestamp = getCurrentTimestamp(timezone)
-    #Forming url to retrieve the timings based on location and timestamp
-    method = displayCalculationMethod()
-    school = displaySchool()
-    angle = displayLatitudeAdjustmentMethod()
-    url = 'http://api.aladhan.com/timings/'+str(currentTimestamp)+'?latitude='+str(latitude)+'&longitude='+str(longitude)+'&timezonestring='+str(timezone)+'&method='+str(method)+'&school='+str(school)+'&angle='+str(angle)
+    latitude = str(lat_lon_tz[0])
+    longitude = str(lat_lon_tz[1])
+    timezone = str(lat_lon_tz[2])
 
-    if writeToFile(filepath,filename,url):
+
+    #Forming url to retrieve the timings based on location and timestamp
+    method = str(displayCalculationMethod())
+    school = str(displaySchool())
+    angle = str(displayLatitudeAdjustmentMethod())
+    fileDict = '{"latitude":"'+latitude+'","longitude":"'+longitude+'","timezone":"'+timezone+'","method":"'+method+'","school":"'+school+'","angle":"'+angle+'"}'
+
+    if writeToFile(filepath,filename,str(fileDict)):
+        url = urlMakerFromFile(readFromFile(filepath,filename))
         cprint('\nConfiguration Successful, You will be notified from the next Namaz time','green',attrs=['bold'])
         displayTimings(url)
     else:
         cprint('\nConfiguration failed, Please try again','red',attrs=['bold'])
 
-flowControl()
 
-if __name__ == '__main__':
-    print('Called')
+def notificationSetter():
+    url = urlMakerFromFile(readFromFile(filepath,filename))
+    responseDict = getUrlResponse(url)
+    responseDict = responseDict['data']
+    responseDict = responseDict['timings']
+    for key, value in responseDict.items():
+        if key in ("Sunrise", "Sunset", "Imsak"):
+            message = '"Its '+key+' time, '+value+'"'
+        elif  key == "Midnight":
+            message = '"If you are awake you can pray Tahajjud, its '+value+'"'
+        else:
+            message = '"Time to Pray your '+key+' salah, its '+value+'"'
+        command = 'notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+        command = "echo '"+command+"' | at "+value
+        os.system(command)
+
+
+def flowControl():
+    if (fileExistenceCheck(filepath,filename)):
+        notificationSetter()
+    else:
+        initialSetup()
+
+flowControl()
 

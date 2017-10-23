@@ -1,6 +1,16 @@
 Configuration & installs
 sudo apt-get install python3
+sudo apt-get install notify-osd
 sudo apt-get install python3-pip
 sudo apt-get install python3-tk
 sudo apt-get install at
 sudo pip3 install termcolor
+
+
+notify-send -u critical -t 60000 -i /usr/share/icons/Adwaita/256x256/actions/edit-find.png test test  && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga
+
+
+
+/usr/share/icons/Paper/64x64/apps/email.png
+
+/home/suraj/Downloads/namaz.png
