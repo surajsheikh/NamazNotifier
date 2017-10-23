@@ -2,6 +2,11 @@ import requests
 import sys
 import os
 from termcolor import colored, cprint
+filename='namaznotifier.lnk'
+filepath='/etc/namaznotifer/'
+if __name__ == '__main__':
+    print('Called')
+
 def responseValidation(requests, url):
     """Validates the response of the url
         Conditions: If response is 200 OK, continue, else exit(0)
@@ -153,13 +158,33 @@ def displayLatitudeAdjustmentMethod():
     return choice
 
 
-def writeToFile(filename,text):
+def writeToFile(filepath,filename,text):
     try:
-        directory = '/etc/namaznotifer/'
+        directory = filepath
         if not os.path.exists(directory):
             os.makedirs(directory)
         f = open(directory+filename,'w')
         f.write(text)
+        return True
+    except Exception as ex:
+        cprint('Operation Encountered an error '+ex.strerror,'red')
+        return False
+        exit(8)
+    finally:
+        f.close()
+
+
+def readFromFile(filepath,filename):
+    try:
+        directory = filepath
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        f = open(directory+filename,'r')
+        while True:
+            line = f.readline()
+            if len(line) == 0:
+                break
+            return line
         return True
     except Exception as ex:
         cprint('Operation Encountered an error '+ex.strerror,'red')
@@ -205,10 +230,14 @@ def flowControl():
     angle = displayLatitudeAdjustmentMethod()
     url = 'http://api.aladhan.com/timings/'+str(currentTimestamp)+'?latitude='+str(latitude)+'&longitude='+str(longitude)+'&timezonestring='+str(timezone)+'&method='+str(method)+'&school='+str(school)+'&angle='+str(angle)
 
-    if writeToFile('namaznotifier.lnk', url):
+    if writeToFile(filepath,filename,url):
         cprint('\nConfiguration Successful, You will be notified from the next Namaz time','green',attrs=['bold'])
         displayTimings(url)
     else:
         cprint('\nConfiguration failed, Please try again','red',attrs=['bold'])
 
 flowControl()
+
+if __name__ == '__main__':
+    print('Called')
+
