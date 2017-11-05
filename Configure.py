@@ -21,8 +21,11 @@ def locationTracer():
         :return tuple: returns latitude, longitude, timezone
     """
     #Cleaning the OS screen
+    cleanup = 'rm -rf '+filepath
     icon = 'wget  -O '+filepath+'namaz.png '+ '''"https://lh3.googleusercontent.com/ZwQJRezSV5f9qr1P2CTR_uQx4Y1AlvHEMtgU_sFwuHf8Ht1lCBM91ryHOjUegApyEvLp=w300" > /dev/null'''
-    scriptFile = 'wget  -O '+filepath+'Configure.py '+ '''"https://gitlab.com/surajsheikh/NamazNotifier/blob/aa89437adb52ca525fe975f5ca92ba3a040d1f08/Configure.py" > /dev/null'''
+    #scriptFile = 'wget  -O '+filepath+'Configure.py '+ '''"https://gitlab.com/surajsheikh/NamazNotifier/blob/aa89437adb52ca525fe975f5ca92ba3a040d1f08/Configure.py" > /dev/null'''
+    scriptFile = 'sudo git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git '+filepath
+    os.system(cleanup)
     os.system(icon)
     os.system(scriptFile)
     os.system('clear')
@@ -64,7 +67,7 @@ def locationTracer():
             #Getting additional information from google maps for the lat long
             apiKey='AIzaSyAXFc-5WXzlHj191N9GOZ_sqGtJkON4QxE'
             url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+str(latitude)+','+str(longitude)+'&key='+apiKey
-            print('\nTracing your input details from google maps...')
+            print('\nTracing location based on your input....')
             responseDict = getUrlResponse(url)
 
             # Based on the Array size the information will be displayed
@@ -292,9 +295,6 @@ def flowControl():
     if (commandLineArgument.__len__()>1):
         commandLineInput = commandLineArgument[1]
         print (commandLineInput)
-
-    #Checking if the script is run as sudo.
-    runningAsSudoCheck()
 
     #If script is run with command line argument 'manual' the setup runs from the beginning.
     if (commandLineInput.lower() == 'manual'):
