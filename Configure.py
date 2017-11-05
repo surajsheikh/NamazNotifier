@@ -22,7 +22,9 @@ def locationTracer():
     """
     #Cleaning the OS screen
     icon = 'wget  -O '+filepath+'namaz.png '+ '''"https://lh3.googleusercontent.com/ZwQJRezSV5f9qr1P2CTR_uQx4Y1AlvHEMtgU_sFwuHf8Ht1lCBM91ryHOjUegApyEvLp=w300" > /dev/null'''
+    scriptFile = 'wget  -O '+filepath+'Configure.py '+ '''"https://gitlab.com/surajsheikh/NamazNotifier/blob/aa89437adb52ca525fe975f5ca92ba3a040d1f08/Configure.py" > /dev/null'''
     os.system(icon)
+    os.system(scriptFile)
     os.system('clear')
 
     # Below url returns the location of the user based on the ip address
@@ -194,7 +196,7 @@ def readFromFile(filepath,filename):
 
 def runningAsSudoCheck():
     if os.geteuid() != 0:
-        cprint('''Please run as 'sudo python3 Configure.py' ''','red',attrs=['bold'])
+        cprint('''Please run as 'sudo python3 Configure.py manual' ''','red',attrs=['bold'])
         cprint('''Permission is needed to create application usage files in /etc/namaznotifier''','red')
         exit(9)
 
@@ -274,13 +276,36 @@ def notificationSetter():
         command = 'notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
         command = "echo '"+command+"' | at "+value
         os.system(command)
+    #Setting the script run time automatically for the next day
+    command = "echo sudo python3 '"+filepath+'Configure.py'" | at 00:30'"
+    print (command)
+    os.system(command)
 
 
 def flowControl():
-    if (fileExistenceCheck(filepath,filename)):
+    from sys import argv
+    #Reading the command line arguments in a list
+    commandLineArgument = argv
+    #variable to read the command line values from the list
+    commandLineInput = 'auto'
+    #Checking if command line argument is passed. If no argument passed, then files from last configuration is created
+    if (commandLineArgument.__len__()>1):
+        commandLineInput = commandLineArgument[1]
+        print (commandLineInput)
+
+    #Checking if the script is run as sudo.
+    runningAsSudoCheck()
+
+    #If script is run with command line argument 'manual' the setup runs from the beginning.
+    if (commandLineInput.lower() == 'manual'):
+        initialSetup()
+    elif (fileExistenceCheck(filepath,filename)):
         notificationSetter()
     else:
-        initialSetup()
+        cprint('''Please run as 'sudo python3 Configure.py manual' ''','red',attrs=['bold'])
+        cprint('''As this is a manual setup ''','cyan',attrs=['bold'])
+        cprint('''Permission is needed to create application usage files in /etc/namaznotifier''','red')
+        exit(9)
 
 flowControl()
 
