@@ -338,7 +338,7 @@ def flowControl():
     elif (fileExistenceCheck(filepath,filename)):
         notificationSetter()
     else:
-        cprint('''Please run as 'sudo python3 Configure.py manual' ''','red',attrs=['bold'])
+        cprint('''Please run as 'sudo python3 NamazNotifer.py manual' ''','red',attrs=['bold'])
         cprint('''As this is a manual setup ''','cyan',attrs=['bold'])
         cprint('''Permission is needed to create application usage files in /etc/namaznotifier''','red')
         exit(9)
