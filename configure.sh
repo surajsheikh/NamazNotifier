@@ -9,10 +9,12 @@ sudo cp /etc/NamazNotifier/NamazNotifier.py /bin
 #write out current crontab
 sudo crontab -l > mycron
 #echo new cron into cron file
-echo "@reboot python3 /etc/NamazNotifier/NamazNotifier.py &" >> mycron
+grep -v 'NamazNotifier' mycron > mycront
+echo "@reboot python3 /etc/NamazNotifier/NamazNotifier.py &" >> mycront
 #install new cron file
-sudo crontab mycron
+sudo crontab mycront
 sudo rm mycron
+sudo rm mycront
 
 sudo python3 /etc/NamazNotifier/NamazNotifier.py manual
 python3 /etc/NamazNotifier/NamazNotifier.py
