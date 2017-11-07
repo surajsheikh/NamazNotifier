@@ -220,7 +220,7 @@ def runningAsSudoCheck():
     """ Checks if the script is being run as sudo
     """
     if os.geteuid() != 0:
-        cprint('''Please run as 'sudo python3 Configure.py manual' ''','red',attrs=['bold'])
+        cprint('''Please run as 'sudo python3 NamazNotifier.py manual' ''','red',attrs=['bold'])
         cprint('''Permission is needed to create application usage files in /etc/namaznotifier''','red')
         exit(9)
 
@@ -316,7 +316,7 @@ def notificationSetter():
         command = "echo '"+command+"' | at "+value
         os.system(command)
     #Setting the script run time automatically for the next day
-    command = "echo sudo python3 '"+filepath+'Configure.py'" | at 00:30'"
+    command = "echo python3 '"+filepath+'Configure.py'" | at 00:30'"
     print (command)
     os.system(command)
 
