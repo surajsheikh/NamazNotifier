@@ -20,14 +20,16 @@ def locationTracer():
 
         :return tuple: returns latitude, longitude, timezone
     """
-    #Cleaning the OS screen
+    #Downloading the necessary files for script to work in filepath location
     cleanup = 'rm -rf '+filepath
     icon = 'wget  -O '+filepath+'namaz.png '+ '''"https://lh3.googleusercontent.com/ZwQJRezSV5f9qr1P2CTR_uQx4Y1AlvHEMtgU_sFwuHf8Ht1lCBM91ryHOjUegApyEvLp=w300" > /dev/null'''
     #scriptFile = 'wget  -O '+filepath+'Configure.py '+ '''"https://gitlab.com/surajsheikh/NamazNotifier/blob/aa89437adb52ca525fe975f5ca92ba3a040d1f08/Configure.py" > /dev/null'''
-    scriptFile = 'sudo git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git '+filepath
+    #scriptFile = 'sudo git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git '+filepath
     os.system(cleanup)
     os.system(icon)
-    os.system(scriptFile)
+    #os.system(scriptFile)
+    
+    #Cleaning the screen
     os.system('clear')
 
     # Below url returns the location of the user based on the ip address
@@ -125,7 +127,8 @@ def getUrlResponse(url):
 def displayCalculationMethod():
     """Display the calculation method
             no args
-            returns choice int"""
+            returns choice int
+    """
     cprint('\n[Mandatory (If not provided may affect the timings)] ','red',attrs=['blink'],end='')
     print('''\nThese are the different methods identifying various schools of thought about how to compute the timings.
             0 - Shia Ithna-Ashari
@@ -141,7 +144,8 @@ def displayCalculationMethod():
 def displaySchool():
     """Display the school option
          no args
-         returns choice int"""
+         returns choice int
+    """
     cprint('\n[Optional (Default value will be used. In this case the first value)] ','yellow',attrs=['blink'],end='')
     print('''\nSchool - If you leave this empty, it defaults to Shafii.
             0 - Shafii
@@ -153,7 +157,8 @@ def displaySchool():
 def displayLatitudeAdjustmentMethod():
     """Display the calculation method
         no args
-        returns choice int"""
+        returns choice int
+    """
     cprint('\n[Optional (Default value will be used. In this case the third value)] ','yellow',attrs=['blink'],end='')
     print('''\nMethod for adjusting times higher latitudes - for instance, if you are checking timings in the UK or Sweden. Defaults to 3 - Angle Based
             1 - Middle of the Night
@@ -164,6 +169,14 @@ def displayLatitudeAdjustmentMethod():
 
 
 def writeToFile(filepath,filename,text):
+    """ Writes text to filename present in filepath
+        :param filepath: location of the file
+        :type arg1: string
+        :param filename: 
+        :type arg2: string
+        :param text: the text to be written to file
+        :type arg3: string
+    """
     try:
         directory = filepath
         if not os.path.exists(directory):
@@ -180,6 +193,12 @@ def writeToFile(filepath,filename,text):
 
 
 def readFromFile(filepath,filename):
+    """ reads text from filename present in filepath
+        :param filepath: location of the file
+        :type arg1: string
+        :param filename: 
+        :type arg2: string
+    """
     try:
         directory = filepath
         if not os.path.exists(directory):
@@ -198,12 +217,17 @@ def readFromFile(filepath,filename):
         f.close()
 
 def runningAsSudoCheck():
+    """ Checks if the script is being run as sudo
+    """
     if os.geteuid() != 0:
         cprint('''Please run as 'sudo python3 Configure.py manual' ''','red',attrs=['bold'])
         cprint('''Permission is needed to create application usage files in /etc/namaznotifier''','red')
         exit(9)
 
 def displayTimings(url):
+    """ Displays the response to user with times 
+        :param url: created url to be hit needs to be passed
+    """
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
     responseDict = responseDict['timings']
@@ -220,6 +244,12 @@ def displayTimings(url):
     print('\n')
 
 def fileExistenceCheck(filepath,filename):
+    """ Checks if the file exists in the location passed
+        :param filepath: location of the file
+        :type arg1: string
+        :param filename: 
+        :type arg2: string
+    """
     from pathlib import Path
     tempfile = Path(filepath+filename)
     if tempfile.is_file():
