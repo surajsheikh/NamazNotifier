@@ -259,6 +259,8 @@ def fileExistenceCheck(filepath,filename):
 
 
 def urlMakerFromFile(text):
+    """ Url constructor with dynamic texts
+    """
     import json
     fileDict = json.loads(text)
     latitude = fileDict['latitude']
@@ -273,6 +275,8 @@ def urlMakerFromFile(text):
 
 
 def initialSetup():
+    """ Functions is called when script running in first time and manual mode
+    """
     runningAsSudoCheck()
     lat_lon_tz = locationTracer()
     latitude = str(lat_lon_tz[0])
@@ -295,6 +299,8 @@ def initialSetup():
 
 
 def notificationSetter():
+    """ Constructs the notifications commands
+    """
     url = urlMakerFromFile(readFromFile(filepath,filename))
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
