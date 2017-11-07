@@ -316,7 +316,7 @@ def notificationSetter():
         command = "echo '"+command+"' | at "+value
         os.system(command)
     #Setting the script run time automatically for the next day
-    command = "echo python3 '"+filepath+'Configure.py'" | at 00:30'"
+    command = "echo python3 '"+filepath+'NamazNotifier.py'" | at 00:30'"
     print (command)
     os.system(command)
 

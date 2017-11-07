@@ -15,3 +15,4 @@ sudo crontab mycron
 sudo rm mycron
 
 sudo python3 /etc/NamazNotifier/NamazNotifier.py manual
+python3 /etc/NamazNotifier/NamazNotifier.py
