@@ -3,7 +3,7 @@ import sys
 import os
 from termcolor import colored, cprint
 filename='namaznotifier.dict'
-filepath='/etc/namaznotifer/'
+filepath='/etc/NamazNotifer/'
 
 def responseValidation(requests, url):
     """Validates the response of the url
