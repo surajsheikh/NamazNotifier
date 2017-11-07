@@ -11,6 +11,7 @@ sudo crontab -l > mycron
 #echo new cron into cron file
 grep -v 'NamazNotifier' mycron > mycront
 echo "@reboot python3 /etc/NamazNotifier/NamazNotifier.py &" >> mycront
+echo "30 00 * * * /etc/NamazNotifier/runner.sh" >> mycront
 #install new cron file
 sudo crontab mycront
 sudo rm mycron

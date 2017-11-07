@@ -3,7 +3,7 @@ import sys
 import os
 from termcolor import colored, cprint
 filename='namaznotifier.dict'
-filepath='/etc/NamazNotifer/'
+filepath='/etc/NamazNotifier/'
 
 def responseValidation(requests, url):
     """Validates the response of the url
@@ -316,9 +316,9 @@ def notificationSetter():
         command = "echo '"+command+"' | at "+value
         os.system(command)
     #Setting the script run time automatically for the next day
-    command = "echo python3 '"+filepath+'NamazNotifier.py'" | at 00:30"
-    print (command)
-    os.system(command)
+    #command = "python3 "+filepath+'NamazNotifier.py'" | at 00:30"
+    #print (command)
+    #os.system(command)
 
 
 def flowControl():
