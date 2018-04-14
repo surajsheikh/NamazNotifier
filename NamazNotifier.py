@@ -3,7 +3,7 @@ import sys
 import os
 from termcolor import colored, cprint
 filename='namaznotifier.dict'
-filepath='/etc/namaznotifier'
+filepath='/etc/namaznotifier/'
 
 def responseValidation(requests, url):
     """Validates the response of the url
@@ -182,7 +182,11 @@ def writeToFile(filepath,filename,text):
         directory = filepath
         if not os.path.exists(directory):
             os.makedirs(directory)
+
+        #os.chmod(filepath+"/"+filename, 666)
+        print (directory+filename)
         f = open(directory+filename,'w')
+        print (f)
         f.write(text)
         return True
     except Exception as ex:
