@@ -3,7 +3,7 @@ import sys
 import os
 from termcolor import colored, cprint
 filename='namaznotifier.dict'
-filepath='/etc/NamazNotifier/'
+filepath='/tmp/namaznotifier/'
 
 def responseValidation(requests, url):
     """Validates the response of the url
@@ -28,7 +28,7 @@ def locationTracer():
     os.system(cleanup)
     os.system(icon)
     #os.system(scriptFile)
-    
+
     #Cleaning the screen
     os.system('clear')
 
@@ -173,7 +173,7 @@ def writeToFile(filepath,filename,text):
     """ Writes text to filename present in filepath
         :param filepath: location of the file
         :type arg1: string
-        :param filename: 
+        :param filename:
         :type arg2: string
         :param text: the text to be written to file
         :type arg3: string
@@ -197,7 +197,7 @@ def readFromFile(filepath,filename):
     """ reads text from filename present in filepath
         :param filepath: location of the file
         :type arg1: string
-        :param filename: 
+        :param filename:
         :type arg2: string
     """
     try:
@@ -226,7 +226,7 @@ def runningAsSudoCheck():
         exit(9)
 
 def displayTimings(url):
-    """ Displays the response to user with times 
+    """ Displays the response to user with times
         :param url: created url to be hit needs to be passed
     """
     responseDict = getUrlResponse(url)
@@ -248,7 +248,7 @@ def fileExistenceCheck(filepath,filename):
     """ Checks if the file exists in the location passed
         :param filepath: location of the file
         :type arg1: string
-        :param filename: 
+        :param filename:
         :type arg2: string
     """
     from pathlib import Path
@@ -278,7 +278,7 @@ def urlMakerFromFile(text):
 def initialSetup():
     """ Functions is called when script running in first time and manual mode
     """
-    runningAsSudoCheck()
+    #runningAsSudoCheck()
     lat_lon_tz = locationTracer()
     latitude = str(lat_lon_tz[0])
     longitude = str(lat_lon_tz[1])
