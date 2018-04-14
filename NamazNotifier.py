@@ -182,11 +182,7 @@ def writeToFile(filepath,filename,text):
         directory = filepath
         if not os.path.exists(directory):
             os.makedirs(directory)
-
-        #os.chmod(filepath+"/"+filename, 666)
-        print (directory+filename)
         f = open(directory+filename,'w')
-        print (f)
         f.write(text)
         return True
     except Exception as ex:
@@ -233,6 +229,12 @@ def displayTimings(url):
     """ Displays the response to user with times
         :param url: created url to be hit needs to be passed
     """
+
+    #Sending a test notification
+    testCommand = 'notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "This is a test Notification, Please pray for me too :)" && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+    testCommand = "echo '"+testCommand+"' | at now 2>/dev/null"
+    os.system(testCommand)
+
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
     responseDict = responseDict['timings']
@@ -310,6 +312,9 @@ def notificationSetter():
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
     responseDict = responseDict['timings']
+    testCommand = 'notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "Namaz times for today has been fetched. You will be reminded at their respective times. Please pray for me too :)" && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+    testCommand = "echo '"+testCommand+"' | at now"
+    os.system(testCommand)
     for key, value in responseDict.items():
         if key in ("Sunrise", "Sunset", "Imsak"):
             message = '"Its '+key+' time, '+value+'"'
@@ -318,7 +323,7 @@ def notificationSetter():
         else:
             message = '"Time to Pray your '+key+' salah, its '+value+'"'
         command = 'notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
-        command = "echo '"+command+"' | at "+value
+        command = "echo '"+command+"' | at "+value+" 2>>/dev/null"
         print (command)
         os.system(command)
     #Setting the script run time automatically for the next day

@@ -7,6 +7,7 @@ sudo rm -rf /etc/namaznotifier/
 sudo mkdir /etc/namaznotifier/
 sudo touch /etc/namaznotifier/namaznotifier.dict
 sudo chmod 666 /etc/namaznotifier/namaznotifier.dict
+sudo chmod 666 /etc/namaznotifier/
 git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git /tmp/NamazNotifier
 
 sudo cp /tmp/NamazNotifier/NamazNotifier.py /bin
