@@ -17,8 +17,8 @@ crontab -l > mycron
 #echo new cron into cron file
 pyt=`which python3`
 grep -v 'NamazNotifier' mycron > mycront
-echo "@reboot $pyt /bin/NamazNotifier.py &" >> mycront
-echo "30 00 * * * $pyt /bin/NamazNotifier.py" >> mycront
+echo "@reboot echo $pyt /bin/NamazNotifier.py & | at now + 3 minutes" >> mycront
+#echo "30 00 * * * $pyt /bin/NamazNotifier.py" >> mycront
 
 #install new cron file
 crontab mycront
