@@ -1,0 +1,132 @@
+INFO - 2018-04-14 19:00:14,799 - __main__ - UrlService : 18 - --------Entering Method----------
+INFO - 2018-04-14 19:00:14,800 - __main__ - UrlService : 19 - connecting to url: www.google.com
+INFO - 2018-04-14 19:00:33,978 - __main__ - UrlService : 18 - --------Entering Method----------
+INFO - 2018-04-14 19:00:33,978 - __main__ - UrlService : 19 - connecting to url: http://www.google.com
+INFO:2018-04-14 19:03:03,984:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:03:03,984:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:03:12,634:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:03:12,634:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:03:30,795:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:03:30,796:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:03:46,211:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:03:46,212:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:04:43,105:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:04:43,109:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:05:10,150:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:05:10,151:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:05:37,595:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:05:37,596:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:05:51,986:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:05:51,986:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:06:15,387:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:06:15,387:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:06:24,298:__main__:UrlService:18:--------Entering Method----------
+INFO:2018-04-14 19:06:24,299:__main__:UrlService:19:connecting to url: http://www.google.com
+INFO:2018-04-14 19:06:51,487:__main__:UrlService:getUrlResponse():--------Entering Method----------(18)
+INFO:2018-04-14 19:06:51,488:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(19)
+INFO:2018-04-14 19:14:42,620:__main__:UrlService:getUrlResponse():--------Entering Method----------(18)
+INFO:2018-04-14 19:14:42,622:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(19)
+INFO:2018-04-14 19:14:42,868:__main__:UrlService:getUrlResponse():--------Exiting Method----------(27)
+INFO:2018-04-14 19:15:16,695:__main__:UrlService:getUrlResponse():--------Entering Method----------(18)
+INFO:2018-04-14 19:15:16,696:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(19)
+ERROR:2018-04-14 19:15:16,897:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(25)
+INFO:2018-04-14 19:15:16,897:__main__:UrlService:getUrlResponse():--------Exiting Method----------(27)
+INFO:2018-04-14 19:16:07,920:__main__:UrlService:getUrlResponse():--------Entering Method----------(18)
+INFO:2018-04-14 19:16:07,920:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(19)
+ERROR:2018-04-14 19:16:08,131:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(25)
+INFO:2018-04-14 19:17:15,821:__main__:UrlService:getUrlResponse():
+--------Entering Method----------(18)
+INFO:2018-04-14 19:17:15,821:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(19)
+ERROR:2018-04-14 19:17:16,017:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(25)
+INFO:2018-04-14 19:17:57,969:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+INFO:2018-04-14 19:17:57,969:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+ERROR:2018-04-14 19:17:58,435:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(26)
+INFO:2018-04-14 19:18:17,751:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+INFO:2018-04-14 19:18:17,751:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+ERROR:2018-04-14 19:18:17,934:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json
+(26)
+INFO:2018-04-14 19:19:01,130:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+INFO:2018-04-14 19:19:01,130:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+INFO:2018-04-14 19:19:01,340:__main__:UrlService:responseValidation():--------Entering Method----------(36)
+INFO:2018-04-14 19:19:01,340:__main__:UrlService:responseValidation():--------Exiting Method----------(40)
+ERROR:2018-04-14 19:19:01,341:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(26)
+DEBUG:2018-04-14 19:21:49,081:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+DEBUG:2018-04-14 19:21:49,081:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+INFO:2018-04-14 19:21:49,289:__main__:UrlService:responseValidation():--------Entering Method----------(36)
+DEBUG:2018-04-14 19:21:49,290:__main__:UrlService:responseValidation():--------Exiting Method-----------(41)
+ERROR:2018-04-14 19:21:49,291:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(26)
+DEBUG:2018-04-14 19:26:28,232:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+DEBUG:2018-04-14 19:26:28,232:__main__:UrlService:getUrlResponse():connecting to url: www.google.com(20)
+DEBUG:2018-04-14 19:26:44,584:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+DEBUG:2018-04-14 19:26:44,584:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+DEBUG:2018-04-14 19:26:44,811:__main__:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 19:26:44,812:__main__:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 19:26:44,812:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 19:27:33,877:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+DEBUG:2018-04-14 19:27:33,877:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+INFO:2018-04-14 19:27:34,057:__main__:UrlService:getUrlResponse():Response from webservice(23)
+DEBUG:2018-04-14 19:27:34,057:__main__:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 19:27:34,058:__main__:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 19:27:34,059:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 19:28:03,059:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+DEBUG:2018-04-14 19:28:03,059:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+DEBUG:2018-04-14 19:28:03,255:__main__:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 19:28:03,256:__main__:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 19:28:03,257:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 19:28:12,087:__main__:UrlService:getUrlResponse():--------Entering Method----------(19)
+DEBUG:2018-04-14 19:28:12,087:__main__:UrlService:getUrlResponse():connecting to url: http://www.google.com(20)
+DEBUG:2018-04-14 19:28:12,289:__main__:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 19:28:12,289:__main__:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 19:28:12,289:__main__:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 20:00:55,586:LocationService:traceLocation():--------Entering Method----------(21)
+DEBUG:2018-04-14 20:00:56,872:LocationService:traceLocation():Response from web service(24)
+DEBUG:2018-04-14 20:00:56,927:LocationService:traceLocation():--------Exiting Method-----------(25)
+DEBUG:2018-04-14 20:03:35,387:LocationService:traceLocation():--------Entering Method----------(21)
+DEBUG:2018-04-14 20:04:15,163:LocationService:traceLocation():--------Entering Method----------(21)
+DEBUG:2018-04-14 20:04:16,417:LocationService:traceLocation():--------Exiting Method-----------(25)
+DEBUG:2018-04-14 20:05:35,620:LocationService:traceLocation():--------Entering Method----------(21)
+DEBUG:2018-04-14 20:05:36,494:LocationService:traceLocation():--------Exiting Method-----------(25)
+DEBUG:2018-04-14 20:05:59,889:LocationService:traceLocation():--------Entering Method----------(21)
+DEBUG:2018-04-14 20:06:00,844:LocationService:traceLocation():Response from web service(24)
+DEBUG:2018-04-14 20:06:00,844:LocationService:traceLocation():--------Exiting Method-----------(25)
+DEBUG:2018-04-14 20:10:30,703:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 20:10:30,703:UrlService:getUrlResponse():connecting to url: http://www.aol.in(21)
+DEBUG:2018-04-14 20:10:33,330:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 20:10:33,331:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 20:10:33,333:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 20:10:47,286:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 20:10:47,286:UrlService:getUrlResponse():connecting to url: http://www.aol.isn(21)
+DEBUG:2018-04-14 20:11:17,625:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 20:11:17,627:UrlService:getUrlResponse():connecting to url: http://www.aol.in(21)
+DEBUG:2018-04-14 20:11:19,929:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 20:11:19,930:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 20:11:19,933:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 20:13:24,549:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 20:13:24,549:UrlService:getUrlResponse():connecting to url: http://www.aol.in(21)
+DEBUG:2018-04-14 20:13:27,510:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 20:13:27,511:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 20:13:27,514:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 20:13:27,518:LocationService:traceLocation():--------Entering Method----------(19)
+DEBUG:2018-04-14 20:13:28,766:LocationService:traceLocation():Response from web service(22)
+DEBUG:2018-04-14 20:17:43,181:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 20:17:43,181:UrlService:getUrlResponse():connecting to url: http://www.aol.in(21)
+DEBUG:2018-04-14 20:17:45,710:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 20:17:45,711:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 20:17:45,713:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 20:17:49,247:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 20:17:49,247:UrlService:getUrlResponse():connecting to url: http://www.aol.in(21)
+DEBUG:2018-04-14 20:17:51,562:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 20:17:51,565:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 20:17:51,567:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 20:17:51,571:LocationService:traceLocation():--------Entering Method----------(19)
+DEBUG:2018-04-14 20:17:52,514:LocationService:traceLocation():Response from web service(22)
+DEBUG:2018-04-14 21:03:14,687:UrlService:getUrlResponse():--------Entering Method----------(20)
+DEBUG:2018-04-14 21:03:14,695:UrlService:getUrlResponse():connecting to url: http://www.aol.in(21)
+DEBUG:2018-04-14 21:03:17,661:UrlService:responseValidation():--------Entering Method----------(37)
+DEBUG:2018-04-14 21:03:17,662:UrlService:responseValidation():--------Exiting Method-----------(42)
+ERROR:2018-04-14 21:03:17,665:UrlService:getUrlResponse():Encountered an error while decoding to json(27)
+DEBUG:2018-04-14 21:03:22,664:LocationService:traceLocation():--------Entering Method----------(19)
+DEBUG:2018-04-14 21:03:23,959:LocationService:traceLocation():Response from web service(22)
+DEBUG:2018-04-14 21:07:49,439:LocationService:traceLocation():--------Entering Method----------(20)
+DEBUG:2018-04-14 21:07:50,667:LocationService:traceLocation():Response from web service(23)
+DEBUG:2018-04-14 21:08:06,484:LocationService:traceLocation():--------Exiting Method-----------(87)

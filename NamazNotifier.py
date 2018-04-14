@@ -67,7 +67,8 @@ def locationTracer():
             timezone = responseDict['timezone']
 
             #Getting additional information from google maps for the lat long
-            apiKey='AIzaSyAXFc-5WXzlHj191N9GOZ_sqGtJkON4QxE'
+            apiKey='AIzaSyC5cvwt9GTKPrVON7VMMTuQCNvvj__KoSs'
+            #apiKey='AIzaSyAXFc-5WXzlHj191N9GOZ_sqGtJkON4QxE'
             url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+str(latitude)+','+str(longitude)+'&key='+apiKey
             print('\nTracing location based on your input....')
             responseDict = getUrlResponse(url)
@@ -301,7 +302,7 @@ def initialSetup():
 def notificationSetter():
     """ Constructs the notifications commands
     """
-    url = urlMakerFromFile(readFromFile(filepath,filename))
+    url = urlMakerFromFile(readFromFile(filepath, filename))
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
     responseDict = responseDict['timings']
@@ -314,6 +315,7 @@ def notificationSetter():
             message = '"Time to Pray your '+key+' salah, its '+value+'"'
         command = 'notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
         command = "echo '"+command+"' | at "+value
+        print (command)
         os.system(command)
     #Setting the script run time automatically for the next day
     #command = "python3 "+filepath+'NamazNotifier.py'" | at 00:30"
