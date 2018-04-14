@@ -8,15 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NamazNotifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/NamazNotifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PythonGUI.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/configure.sh" beforeDir="false" afterPath="$PROJECT_DIR$/configure.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/LocationService.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urlService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/namaznotifier.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/namaznotifier.log.2018-04-14_12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/url/UrlService.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/url/__init__.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,39 +19,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NamazNotifier.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NamazNotifier.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NamazNotifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6574">
-              <caret line="349" lean-forward="true" selection-start-line="349" selection-end-line="349" />
+            <state relative-caret-position="38">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urlService.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/urlService.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="configure.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="configure.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configure.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="133">
+              <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dependencies.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dependencies.txt">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -104,9 +79,9 @@
         <option value="$PROJECT_DIR$/url/UrlService.py" />
         <option value="$PROJECT_DIR$/location/LocationService.py" />
         <option value="$PROJECT_DIR$/runner.sh" />
+        <option value="$PROJECT_DIR$/config/urlService.py" />
         <option value="$PROJECT_DIR$/NamazNotifier.py" />
         <option value="$PROJECT_DIR$/configure.sh" />
-        <option value="$PROJECT_DIR$/config/urlService.py" />
       </list>
     </option>
   </component>
@@ -124,7 +99,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,6 +110,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,17 +249,17 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948583" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32948583" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.33053514" />
       <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32948583" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -296,6 +271,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/configure.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="130" lean-forward="true" selection-start-line="5" selection-end-line="5" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/logger.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -303,16 +285,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url/UrlService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/url/UrlService.py" />
     <entry file="file://$PROJECT_DIR$/NamazNotifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -328,13 +301,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runner.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/runner.sh" />
     <entry file="file://$PROJECT_DIR$/configure.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -438,36 +405,9 @@
     <entry file="file://$PROJECT_DIR$/scratch.txt" />
     <entry file="file://$PROJECT_DIR$/Configure.py" />
     <entry file="file://$PROJECT_DIR$/config/LogInit.py" />
-    <entry file="file://$PROJECT_DIR$/url/UrlService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" selection-start-line="44" selection-end-line="48" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/location/LocationService.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/url/UrlService.py" />
+    <entry file="file://$PROJECT_DIR$/location/LocationService.py" />
+    <entry file="file://$PROJECT_DIR$/runner.sh" />
     <entry file="file://$PROJECT_DIR$/config/logger.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -475,17 +415,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NamazNotifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6574">
-          <caret line="349" lean-forward="true" selection-start-line="349" selection-end-line="349" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/urlService.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -494,8 +427,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/configure.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="133">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NamazNotifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
         </state>
       </provider>
     </entry>
