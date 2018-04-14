@@ -26,3 +26,4 @@ rm mycron
 rm mycront
 
 $pyt /bin/NamazNotifier.py manual
+$pyt /bin/NamazNotifier.py
