@@ -231,7 +231,7 @@ def displayTimings(url):
     """
 
     #Sending a test notification
-    testCommand = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "This is a test Notification, Please pray for me too :)" && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+    testCommand = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "This is a test Notification, Please pray for me too :)" && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
     testCommand = "echo '"+testCommand+"' | at now 2>/dev/null"
     os.system(testCommand)
 
@@ -312,7 +312,7 @@ def notificationSetter():
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
     responseDict = responseDict['timings']
-    testCommand = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "Namaz times for today has been fetched. You will be reminded at their respective times. Please pray for me too :)" && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+    testCommand = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "Namaz times for today has been fetched. You will be reminded at their respective times. Please pray for me too :)" && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
     testCommand = "echo '"+testCommand+"' | at now"
     os.system(testCommand)
     for key, value in responseDict.items():
@@ -322,7 +322,7 @@ def notificationSetter():
             message = '"If you are awake you can pray Tahajjud, its '+value+'"'
         else:
             message = '"Time to Pray your '+key+' salah, its '+value+'"'
-        command = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+        command = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
         command = "echo '"+command+"' | at "+value+" 2>>/dev/null"
         print (command)
         os.system(command)

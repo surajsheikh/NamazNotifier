@@ -18,9 +18,9 @@ crontab -l > mycron
 #echo new cron into cron file
 pyt=`which python3`
 grep -v 'NamazNotifier' mycron > mycront
-#Below configuration are needed, otherwise notify send doesnt work from cron
-echo "@reboot echo 'sudo -u $USER DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus $pyt /bin/NamazNotifier.py' | at now + 2 minutes" >> mycront
-echo "15 0 * * * sudo -u $USER DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus $pyt /bin/NamazNotifier.py" >> mycront
+#Below configuration are needed, otherwise notify send doesnt work from cro
+echo "@reboot echo 'sudo -u $USER DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/`id -u`/bus $pyt /bin/NamazNotifier.py' | at now + 2 minutes" >> mycront
+echo "15 0 * * * sudo -u $USER DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/`id -u`/bus $pyt /bin/NamazNotifier.py" >> mycront
 
 #install new cron file
 crontab mycront
@@ -29,3 +29,6 @@ rm mycront
 
 $pyt /bin/NamazNotifier.py manual
 $pyt /bin/NamazNotifier.py
+
+
+#sudo -u $USER DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical -t 60000 "SOund" "sound" && paplay /usr/share/sounds/freedesktop/stereo/service-login.oga
