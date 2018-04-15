@@ -1,0 +1,10 @@
+Thank you for using Namaz Notifier
+Report any problems or enhancements to suraj.sheikh@aol.in
+
+Installation instructions:
+1. Once downloaded and unzipped.
+2. you will find configure.sh script.
+3. run the script from terminal as ./configure.sh (not as sudo)
+4. follow the on screen instructions
+
+* Whenever you need to change any settings sun ./configure.sh
