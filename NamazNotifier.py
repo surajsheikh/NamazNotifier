@@ -34,12 +34,16 @@ def locationTracer():
 
     # Below url returns the location of the user based on the ip address
     url = 'http://freegeoip.net/json'
+    url = ''' http://api.ipstack.com/150.129.156.19?access_key=22f921a529382088522b17e6c8fb893d&format=1  '''
     responseDict = getUrlResponse(url)
 
     #Reading required information from the response json
     latitude = responseDict['latitude']
     longitude = responseDict['longitude']
-    timezone = responseDict['time_zone']
+
+    url = 'http://api.geonames.org/timezoneJSON?lat=' + str(latitude) + '&lng=' + str(longitude) + '&username=surajsheikh'
+    responseDictTemp = getUrlResponse(url)
+    timezone = responseDictTemp['timezoneId']
 
     #Displaying the information to the user for confirmation
     print('Detected your city as {}, in {}, {}'.format(responseDict['city'],responseDict['region_name'],responseDict['country_name']))
