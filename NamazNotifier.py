@@ -4,6 +4,7 @@ import os
 from termcolor import colored, cprint
 filename='namaznotifier.dict'
 filepath='/etc/namaznotifier/'
+icon='/etc/namaznotifier/namaz.png'
 
 def responseValidation(requests, url):
     """Validates the response of the url
@@ -22,7 +23,7 @@ def locationTracer():
     """
     #Downloading the necessary files for script to work in filepath location
     cleanup = 'rm -rf '+filepath
-    icon = 'wget  -O '+filepath+'namaz.png '+ '''"https://lh3.googleusercontent.com/ZwQJRezSV5f9qr1P2CTR_uQx4Y1AlvHEMtgU_sFwuHf8Ht1lCBM91ryHOjUegApyEvLp=w300" > /dev/null'''
+    #icon = 'wget  -O '+filepath+'namaz.png '+ '''"https://lh3.googleusercontent.com/ZwQJRezSV5f9qr1P2CTR_uQx4Y1AlvHEMtgU_sFwuHf8Ht1lCBM91ryHOjUegApyEvLp=w300" > /dev/null'''
     #scriptFile = 'wget  -O '+filepath+'Configure.py '+ '''"https://gitlab.com/surajsheikh/NamazNotifier/blob/aa89437adb52ca525fe975f5ca92ba3a040d1f08/Configure.py" > /dev/null'''
     #scriptFile = 'sudo git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git '+filepath
     os.system(cleanup)
@@ -316,7 +317,7 @@ def notificationSetter():
     responseDict = getUrlResponse(url)
     responseDict = responseDict['data']
     responseDict = responseDict['timings']
-    testCommand = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier:" "Namaz times for today has been fetched. You will be reminded at their respective times. Please pray for me too :)" && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+    testCommand = '/usr/bin/notify-send -u critical -t 60000 -i '+icon+  ' "Namaz Notifier:" "Namaz times for today has been fetched. You will be reminded at their respective times. Please pray for me too :)" && /usr/bin/play -q'+filepath+'/notification.mp3'
     testCommand = "echo '"+testCommand+"' | at now"
     os.system(testCommand)
     for key, value in responseDict.items():
@@ -326,7 +327,7 @@ def notificationSetter():
             message = '"If you are awake you can pray Tahajjud, its '+value+'"'
         else:
             message = '"Time to Pray your '+key+' salah, its '+value+'"'
-        command = '/usr/bin/notify-send -u critical -t 60000 -i '+filepath+'namaz.png'+  ' "Namaz Notifier: '+key+'" '+message+' && /usr/bin/paplay /usr/share/sounds/freedesktop/stereo/service-login.oga'
+        command = '/usr/bin/notify-send -u critical -t 60000 -i '+icon+  ' "Namaz Notifier: '+key+'" '+message+' && /usr/bin/play -q'+filepath+'/notification.mp3'
         command = "echo '"+command+"' | at "+value+" 2>>/dev/null"
         print (command)
         os.system(command)
@@ -353,7 +354,7 @@ def flowControl():
     elif (fileExistenceCheck(filepath,filename)):
         notificationSetter()
     else:
-        cprint('''Please run as 'sudo python3 NamazNotifer.py manual' ''','red',attrs=['bold'])
+        cprint('''Please run as 'sudo python3 NamazNotifier.py manual' ''','red',attrs=['bold'])
         cprint('''As this is a manual setup ''','cyan',attrs=['bold'])
         cprint('''Permission is needed to create application usage files in /etc/namaznotifier''','red')
         exit(9)

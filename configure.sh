@@ -2,6 +2,8 @@
 sudo apt-get update
 sudo apt-get install python3 notify-osd python3-pip python3-tk at git
 sudo pip3 install termcolor
+sudo apt-get install sox
+sudo apt-get install sox libsox-fmt-all
 rm -rf /tmp/NamazNotifier
 sudo rm -rf /etc/namaznotifier/
 sudo mkdir /etc/namaznotifier/
@@ -11,6 +13,7 @@ sudo chmod 777 /etc/namaznotifier/
 git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git /tmp/NamazNotifier
 
 sudo cp /tmp/NamazNotifier/NamazNotifier.py /bin
+sudo cp /tmp/NamazNotifier/resources/* /etc/namaznotifier/
 sudo chmod 555 /bin/NamazNotifier.py
 
 #write out current crontab
