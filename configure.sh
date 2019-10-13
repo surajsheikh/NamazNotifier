@@ -13,7 +13,8 @@ sudo chmod 777 /etc/namaznotifier/
 git clone https://surajsheikh:ca29066e4c937ee42bdbfbd7028dfe4534d14e41@github.com/surajsheikh/NamazNotifier.git /tmp/NamazNotifier
 
 sudo cp /tmp/NamazNotifier/NamazNotifier.py /bin
-sudo cp /tmp/NamazNotifier/resources/* /etc/namaznotifier/
+sudo cp /tmp/NamazNotifier/resources/namaz.png /etc/namaznotifier/
+sudo cp /tmp/NamazNotifier/resources/notification.mp3 /etc/namaznotifier/
 sudo chmod 555 /bin/NamazNotifier.py
 
 #write out current crontab

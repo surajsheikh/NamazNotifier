@@ -327,7 +327,7 @@ def notificationSetter():
             message = '"If you are awake you can pray Tahajjud, its '+value+'"'
         else:
             message = '"Time to Pray your '+key+' salah, its '+value+'"'
-        command = '/usr/bin/notify-send -u critical -t 60000 -i '+icon+  ' "Namaz Notifier: '+key+'" '+message+' && /usr/bin/play -q'+filepath+'/notification.mp3'
+        command = '/usr/bin/notify-send -u critical -t 60000 -i '+icon+  ' "Namaz Notifier: '+key+'" '+message+' && /usr/bin/play -q '+filepath+'/notification.mp3'
         command = "echo '"+command+"' | at "+value+" 2>>/dev/null"
         print (command)
         os.system(command)
